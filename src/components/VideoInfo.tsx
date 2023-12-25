@@ -21,7 +21,12 @@ const VideoInfo: React.FC<VideoInfoProps> = ({ data }) => {
         >
           <img src={data.thumbnail} alt="Video Thumbnail" className="w-100" />
         </a>
-        <h6 className="text-[1.6rem] sm:text-[1.8rem] my-[1rem] text-center">
+        <h6
+          className="text-[1.6rem] sm:text-[1.8rem] my-[1rem] text-center cursor-pointer"
+          onClick={() => {
+            navigator.clipboard.writeText(data.title);
+          }}
+        >
           {data.title}
         </h6>
       </div>
